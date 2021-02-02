@@ -3,9 +3,10 @@ import styled from 'styled-components';
 const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  -webkit-box-shadow: 0px 0px 12px 1px rgba(21,21,21,0.8);
+  -moz-box-shadow: 0px 0px 12px 1px rgba(21,21,21,0.8);
+  box-shadow: 0px 0px 12px 1px rgba(21,21,21,0.8);
   background-color: ${({ theme }) => theme.colors.mainBg};
-  border-radius: 4px;
   overflow: hidden;
 
   h1, h2, h3 {

@@ -1,28 +1,73 @@
 {
-  "bg": "https://articles.gamerheadquarters.com/images/top10/movies/10.jpg",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://wallpaperaccess.com/full/781838.jpg",
+  "title": "Quiz Breaking Bad",
+  "description": "Teste os seus conhecimentos sobre a melhor série de todos os tempos!",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": "https://media4.giphy.com/media/e0tTzm60eHbZ6/giphy.gif?cid=ecf05e47221b27aa8a90e8841a5487cd0a437f9eb31ccefd&rid=giphy.gif",
+      "title": "Quando a série foi lançada?",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "20 de janeiro de 2009",
+        "20 de setembro de 2008",
+        "20 de janeiro de 2008",
+        "20 de setembro de 2007"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://thumbs.gfycat.com/RareVastEastrussiancoursinghounds-size_restricted.gif",
+      "title": "Qual é o nome do restaurante do Gus?",
+      "answer": 1,
+      "alternatives": [
+        "Los Dos Hermanos",
+        "Los Pollos Hermanos",
+        "Los Gallos Hermanos",
+        "Los Hermanos"
+      ]
+    },
+    {
+      "image": "https://i.gifer.com/6EZ.gif",
+      "title": "Qual era a cor da metanfetamina que eles vendiam na série?",
+      "description": "Essa é fácil!",
       "answer": 0,
       "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
+        "Azul",
+        "Verde",
+        "Branca",
+        "Amarela"
+      ]
+    },
+    {
+      "image": "https://media1.giphy.com/media/11z068pqgqbhHa/giphy.gif?cid=ecf05e478rems4h8rrokjh312e2zesfcuh9lwjtlnqaz5o15&rid=giphy.gif",
+      "title": "Onde se localizava o câncer de Walter White?",
+      "answer": 2,
+      "alternatives": [
+        "No instestino",
+        "No fígado",
+        "No pulmão",
+        "No cérebro"
+      ]
+    },
+    {
+      "image": "https://media4.giphy.com/media/qCj1NK1rxtnna/giphy.gif?cid=ecf05e477e5lnsasdsnt6yjr5ynm9wzfp33r55tnt7xl8gxb&rid=giphy.gif",
+      "title": "Qual era a matéria que Walt lecionava?",
+      "answer": 3,
+      "alternatives": [
+        "Biologia",
+        "Matemática",
+        "Física",
+        "Química"
+      ]
+    },
+    {
+      "image": "https://i.gifer.com/158G.gif",
+      "title": "Qual é o nome dos dois amigos de Jesse?",
+      "answer": 0,
+      "alternatives": [
+        "Badger e Skinny Pete",
+        "Badger e Crazy Eight",
+        "Crazy Eight e Tortuga",
+        "Skinny Pete e Crazy Eight"
       ]
     }
   ],
@@ -32,12 +77,12 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#4CAF50",
-      "secondary": "#FF9800",
-      "mainBg": "#1C1814",
+      "primary": "#009688",
+      "secondary": "#357a38",
+      "mainBg": "#232323",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
-      "success": "#4CAF50"
+      "success": "#357a38"
     },
     "borderRadius": "4px"
   }

@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Alura Quiz - Modelo Base</title>
+        <title>Alura Quiz - Breaking Bad</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
@@ -35,7 +35,7 @@ export default function Home() {
           animate="show"
         >
           <Widget.Header>
-            <h1>The legend of Zelda</h1>
+            <h1>Quiz sobre a série Breaking Bad</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={(infosDoEvento) => {
@@ -48,11 +48,11 @@ export default function Home() {
               <Input
                 name="nomeDoUsuario"
                 onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
-                placeholder="Diz aí seu nome"
+                placeholder="Qual é o seu nome?"
                 value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
-                {`Jogar ${name}`}
+                Jogar
               </Button>
             </form>
           </Widget.Content>

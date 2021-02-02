@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { Lottie } from '@crello/react-lottie';
+import styled from 'styled-components';
 import Widget from '../../components/Widget';
 import QuizLogo from '../../components/QuizLogo';
 import QuizBackground from '../../components/QuizBackground';
@@ -7,12 +9,20 @@ import QuizContainer from '../../components/QuizContainer';
 import Button from '../../components/Button';
 import AlternativesForm from '../../components/AlternativesForm';
 import BackLinkArrow from '../../components/BackLinkArrow';
+import loadingAnimation from './animations/loading.json';
+
+const LoadingIconContainer = styled.div`
+  display: flex;
+  align-items: center; 
+  flex-direction: column;
+  padding: 30px;
+`;
 
 const ResultWidget = ({ results }) => (
   <Widget>
     <Widget.Header>
       <BackLinkArrow href="/" />
-      Tela de Resultado:
+      Resultado:
     </Widget.Header>
 
     <Widget.Content>
@@ -46,7 +56,14 @@ const LoadingWidget = () => (
     </Widget.Header>
 
     <Widget.Content>
-      [Desafio do Loading]
+      <LoadingIconContainer>
+        <Lottie
+          width="100px"
+          height="100px"
+          className="lottie-container basic"
+          config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
+        />
+      </LoadingIconContainer>
     </Widget.Content>
   </Widget>
 );
@@ -60,6 +77,7 @@ const QuestionWidget = ({
 }) => {
   const [selectedAlternative, setSelectedAlternative] = React.useState();
   const [isQuestionSubmitted, setQuestionSubmitted] = React.useState(false);
+  const [isSubmitting, setSubmitting] = React.useState(false);
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
@@ -92,6 +110,7 @@ const QuestionWidget = ({
 
         <AlternativesForm
           onSubmit={(infosDoEvento) => {
+            setSubmitting(true);
             infosDoEvento.preventDefault();
             setQuestionSubmitted(true);
             setTimeout(() => {
@@ -99,26 +118,28 @@ const QuestionWidget = ({
               onSubmit();
               setQuestionSubmitted(false);
               setSelectedAlternative(undefined);
-            }, 3 * 1000);
+              setSubmitting(false);
+            }, 2 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
-            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
             const isSelected = selectedAlternative === alternativeIndex;
+            const rightAnswer = alternativeIndex === question.answer && !isCorrect;
+            const alternativeStatus = isCorrect || rightAnswer ? 'SUCCESS' : 'ERROR';
             return (
               <Widget.Topic
                 as="label"
                 key={alternativeId}
                 htmlFor={alternativeId}
-                data-selected={isSelected}
+                data-selected={isSelected || (isQuestionSubmitted && rightAnswer)}
                 data-status={isQuestionSubmitted && alternativeStatus}
               >
                 <input
                   style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
-                  onChange={() => setSelectedAlternative(alternativeIndex)}
+                  onChange={() => !isSubmitting && setSelectedAlternative(alternativeIndex)}
                   type="radio"
                 />
                 {alternative}
@@ -132,8 +153,6 @@ const QuestionWidget = ({
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-          {isQuestionSubmitted && isCorrect && <p>Você acertou!</p>}
-          {isQuestionSubmitted && !isCorrect && <p>Você errou!</p>}
         </AlternativesForm>
       </Widget.Content>
     </Widget>
