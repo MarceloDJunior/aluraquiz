@@ -35,7 +35,7 @@ export default function Home() {
           animate="show"
         >
           <Widget.Header>
-            <h1>Quiz sobre a série Breaking Bad</h1>
+            <h1>Quiz sobre a série Breaking Bad!</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={(infosDoEvento) => {
@@ -102,7 +102,7 @@ export default function Home() {
           animate="show"
         />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/juniorlp123" />
+      <GitHubCorner projectUrl="https://github.com/MarceloDJunior" />
     </QuizBackground>
   );
 }

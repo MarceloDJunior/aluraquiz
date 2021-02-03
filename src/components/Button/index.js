@@ -17,7 +17,7 @@ const Button = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: .7;
   }
   &:disabled {
     background-color: #979797;
